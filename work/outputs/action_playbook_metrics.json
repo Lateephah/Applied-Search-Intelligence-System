@@ -1,0 +1,70 @@
+{
+  "population": {
+    "rows": 30000,
+    "base_rate_declining": 0.542,
+    "unique_clients": 32
+  },
+  "held_out_validation_reference": {
+    "source": "w05/w06 client-grouped 80/20 split",
+    "precision_at_20": 0.65,
+    "precision_at_50": 0.64,
+    "precision_at_100": 0.67,
+    "random_split_precision_at_20_for_comparison": 0.9
+  },
+  "action_tiers": {
+    "MONITOR": 21000,
+    "SCHEDULE_REVIEW": 6000,
+    "PRIORITY_REVIEW": 3000
+  },
+  "action_thresholds": {
+    "top_10pct": 0.757,
+    "top_30pct": 0.666
+  },
+  "reason_code_counts": {
+    "past_visibility_peak": 13725,
+    "inconsistent_traffic": 7793,
+    "aging_past_lifecycle_peak": 3127,
+    "content_depth_mismatch": 2494,
+    "large_page_regression_risk": 2032,
+    "weak_ranking_position": 401,
+    "weak_scroll_depth": 240,
+    "stale_content": 171,
+    "weak_engagement": 9,
+    "weak_click_through": 8
+  },
+  "archetypes": {
+    "0": {
+      "n": 20113,
+      "avg_impressions": 4289.05,
+      "avg_days_since_update": 18.7,
+      "avg_ctr": 0.34,
+      "decline_rate": 0.51
+    },
+    "1": {
+      "n": 9269,
+      "avg_impressions": 7481.62,
+      "avg_days_since_update": 106.07,
+      "avg_ctr": 0.25,
+      "decline_rate": 0.61
+    },
+    "2": {
+      "n": 486,
+      "avg_impressions": 818.09,
+      "avg_days_since_update": 38.65,
+      "avg_ctr": 1.35,
+      "decline_rate": 0.54
+    },
+    "3": {
+      "n": 132,
+      "avg_impressions": 4.2,
+      "avg_days_since_update": 36.68,
+      "avg_ctr": 41.35,
+      "decline_rate": 0.14
+    }
+  },
+  "cost_value_check": {
+    "top5_by_probability_click_equiv_value_sum": 0.0,
+    "top5_by_value_weighted_click_equiv_value_sum": 13058.539999999999,
+    "overlap_between_top5_lists": 0
+  }
+}
