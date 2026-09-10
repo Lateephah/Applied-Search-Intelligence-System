@@ -35,7 +35,7 @@
       "precision@50": 0.511,
       "precision@100": 0.511,
       "ROC-AUC": NaN,
-      "Avg Precision": NaN,
+      "Avg Precision": NaN
     }
   ],
   "split_before_after": {
