@@ -550,7 +550,7 @@
       (precision@20 of 0.650, measured across all 30,000 rows it was built against) drops to
       base rate on seven completely unseen clients. Logistic Regression wins at every
       precision@K cut that matters for a queue an editor works top-down. Random Forest does
-      better on whole-ranking measures &mdash; ROC-AUC and Average Precision &mdash; but loses to
+      better on whole-ranking measures, ROC-AUC and Average Precision  but loses to
       Logistic Regression specifically where it counts. Added complexity didn't earn its keep
       here. I'd deploy the simpler, more readable model.
     </p>
@@ -597,7 +597,7 @@
       The five pages with the <em>highest</em> raw decline probability all had
       <strong>zero clicks in 90 days</strong>. They cost nothing to leave alone. Re-ranking by
       probability &times; click-equivalent value produces a completely different top five, with
-      zero overlap between the two lists &mdash; those are the pages actually worth an editor's
+      zero overlap between the two lists, those are the pages actually worth an editor's
       first hour.
     </div>
     <h3>Content archetypes</h3>
@@ -640,7 +640,7 @@
     <p>
       Before anyone acts on a row, someone should check that the page isn't already deprecated,
       redirected, or scheduled for removal, and that the reason code still holds up on a manual
-      look &mdash; a page updated just outside this snapshot's window can show up as stale by
+      look, a page updated just outside this snapshot's window can show up as stale by
       mistake. Worth checking too: whether impressions and clicks are anywhere near the
       reliability floor, and whether what looks like decline is really just an expected seasonal
       dip.
