@@ -351,19 +351,21 @@
   <div class="prose">
     <h2>Abstract</h2>
     <p>
-      Content teams often decide what to refresh using hand-picked rules, like whether a page is
-      stale or still gets traffic, without checking whether those rules actually predict decline.
-      I tested this on 30,000 pseudonymized pages across 32 clients from the FlyRank ML
+      FlyRank's own research found that content performance decays hard after 271&ndash;365 days
+      and recovers when refreshed, but a portfolio-level finding like that doesn't tell a content
+      team which of its own pages to look at first, so most teams fall back on hand-picked rules,
+      like whether a page is stale or still gets traffic, that nobody has actually checked against
+      outcomes. I tested this on 30,000 pseudonymized pages across 32 clients from the FlyRank ML
       Internship dataset, using trailing 90-day search and engagement metrics. I built a
       transparent two-signal rule as a baseline, audited it for measurement traps, then trained a
       Logistic Regression model under a client-grouped holdout meant to test how well it would
       generalize to a brand-new client. The rule scored well on its own tuning population, with a
       precision@20 of 0.650, but dropped to the base rate on clients it had never seen, while the
-      validated model held precision@20/50/100 of 0.650/0.640/0.670 on that same split; the gap
-      only showed up once I compared a naive random split against the grouped one. The result is
-      a ranked, reason-coded review queue with content archetypes, a human-review checklist, and
-      a list of actions the system should never take on its own. It's meant to support a content
-      team's triage, and it says nothing about how a search engine actually ranks pages.
+      validated model held precision@20/50/100 of 0.650/0.640/0.670 on that same split &mdash; a
+      gap that only showed up once I compared a naive random split against the grouped one. The
+      result is a ranked, reason-coded review queue with content archetypes, a human-review
+      checklist, and a list of actions the system should never take on its own, meant to support a
+      content team's triage rather than to say anything about how a search engine ranks pages.
     </p>
     <div class="stat-row">
       <div class="stat"><span class="num">30,000</span><span class="lbl">pages, 32 clients</span></div>
@@ -400,6 +402,18 @@
       work, cannot manually review every page. Someone has to decide what gets looked at first.
       In practice, that decision is usually a rule of thumb applied by eye: <em>it's old, it
       still gets traffic, worth fixing.</em>
+    </p>
+    <p>
+      This isn't a hypothetical. FlyRank's own portfolio research found the same shape at much
+      larger scale: content health peaks around 61&ndash;90 days, holds through a plateau, then
+      drops sharply by 271&ndash;365 days (health score falling from roughly 33 to 14 in their
+      data), with real recovery showing up only on pages that get refreshed &mdash; in their
+      sample, a 365+ day page refreshed within 30 days saw about a 3&times; health lift and 57
+      times the impressions of one left untouched. Their own recommended next step was to build a
+      review cycle and identify refresh candidates before pages hit that decay window. What that
+      research doesn't do, and wasn't trying to do, is say which specific pages in a given
+      portfolio to look at first. That's the gap this project is built to fill, at the scale of
+      one lane: 30,000 pages, not a whole industry sample.
     </p>
     <blockquote class="scenario">
       An editor opens the CMS on a Monday morning with thirty thousand pages and one afternoon to
